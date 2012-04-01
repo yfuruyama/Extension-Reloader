@@ -1,0 +1,19 @@
+{
+  "name": "autoReload",
+  "version": "1.0",
+  "description": "auto-reload of developing chrome extension",
+  "permissions": [
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*",
+                  "https://*/*"],
+      "js": ["contentscript.js"]
+    }
+  ]
+}
+
