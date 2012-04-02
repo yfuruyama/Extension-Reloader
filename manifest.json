@@ -1,3 +1,7 @@
+/*
+ * manifest.json
+ */
+
 {
   "name": "Extension Reloader",
   "version": "1.0",
