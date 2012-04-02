@@ -1,17 +1,16 @@
 {
-  "name": "autoReload",
+  "name": "Extension Reloader",
   "version": "1.0",
-  "description": "auto-reload of developing chrome extension",
+  "description": "Reload an unpackaged chrome extension by hitting the commond",
   "permissions": [
-    "tabs"
+    "management"
   ],
   "background": {
     "scripts": ["background.js"]
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*",
-                  "https://*/*"],
+      "matches": ["*://*/*"],
       "js": ["contentscript.js"]
     }
   ]
