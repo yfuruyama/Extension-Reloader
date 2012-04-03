@@ -11,7 +11,7 @@ How to use
 ###1. Edit setting.js###
 + Replace EXTENSION_ID variable by your target extension id.
 + Set HotKey.  
-    + ex) when you want to set Hotkey as **CTRL + Shift + r**(default is ctrl+r)
+    + ex) when you want to set Hotkey as **CTRL + Shift + r** (default HotKey is ctrl+r)
 
 ```javascript
     var EXTENSION_ID = "CHROME EXTENSION ID WHICH YOU WANT TO RELOAD";  
@@ -29,4 +29,4 @@ How to use
 
 License
 -------------------------------
-This Chrome Extension is distributed as MIT license.
+Extension Reloader is distributed as MIT license.
