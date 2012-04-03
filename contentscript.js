@@ -8,5 +8,6 @@ document.onkeydown = function(event) {
       && (SHIFT_KEY == event.shiftKey)
       && (ALT_KEY == event.altKey)) {
     chrome.extension.sendRequest({id: EXTENSION_ID});
+    alert("extension reloaded!");
   }
 }
