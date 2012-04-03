@@ -6,11 +6,12 @@ Chrome Extensionをコマンド一発で自動更新させるChrome Extensionで
 Extension Reloader is Chrome Extension for developers to develop the extension faster.  
 By hitting the command in your browser, the extension will be reloaded automatically.
 
-使い方 - How to use
+How to use
 -------------------------------
-###1. setting.jsファイルの編集###
-+ **EXTENSION_ID**をターゲットとなるExtensionのIDに差し替え、ホットキーを設定  
-+ 例: ホットキーを **CTRL + Shift + r** にする場合 (デフォルトはctrl+r)
+###1. Edit setting.js###
++ Replace EXTENSION_ID variable by your target extension id.
++ Set HotKey.  
+    + ex) when you want to set Hotkey as **CTRL + Shift + r**(default is ctrl+r)
 
 ```javascript
     var EXTENSION_ID = "CHROME EXTENSION ID WHICH YOU WANT TO RELOAD";  
@@ -20,8 +21,12 @@ By hitting the command in your browser, the extension will be reloaded automatic
     var ALT_KEY = false;
 ```
 
-###2. Chrome Extensionに登録###
-+ **chrome://settings/extensions**にアクセスし、ExtensionReloaderを登録
+###2. Register as Chrome Extension###
++ Access to [chrome://settings/extensions](chrome://settings.extensions) and register ExtensionReloader.
 
-###3. Extension Reloaderを実行###
-+ Chrome上でホットキーを入力すると、指定したIDのExtensionが自動でリロード！
+###3. Fire your HotKey###
++ Hit your HotKey and the extension weill be reloaded!
+
+License
+-------------------------------
+This Chrome Extension is distributed as MIT license.
