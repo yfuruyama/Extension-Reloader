@@ -9,12 +9,10 @@ By hitting the command in your browser, the extension will be reloaded automatic
 How to use
 -------------------------------
 ###1. Edit setting.js###
-+ Replace EXTENSION_ID variable by your target extension id.
 + Set HotKey.  
     + ex) when you want to set Hotkey as **CTRL + Shift + r** (default HotKey is ctrl+r)
 
 ```javascript
-    var EXTENSION_ID = "CHROME EXTENSION ID WHICH YOU WANT TO RELOAD";  
     var KEY_CODE = 82; // 82 is key code of 'r'  
     var CTRL_KEY = true;  
     var SHIFT_KEY = true;  
