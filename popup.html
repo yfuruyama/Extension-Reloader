@@ -1,0 +1,70 @@
+<html>
+<head>
+<script type="text/javascript">
+chrome.management.getAll(function(results) {
+  var selfId = chrome.i18n.getMessage("@@extension_id");
+  var currentTargetId = localStorage.getItem("targetExtensionId");
+
+  for (var i = 0; i < results.length; i++) {
+    if (!results[i].isApp && results[i].id != selfId) {
+
+      var div = document.createElement("div");
+
+      // checkboxの作成
+      var box = document.createElement("input");
+      box.type = "checkbox";
+      box.id = results[i].id;
+      box.className = "extensionList";
+      box.style.marginRight = "7px";
+      box.onclick = function(event) {
+        var targetId = event.target.id;
+
+        var boxes = document.getElementsByClassName("extensionList");
+        for (var i = 0; i < boxes.length; i++) {
+          if (boxes[i].checked) {
+            // 以前チェックされていたものは外す
+            if (targetId != boxes[i].id) {
+              boxes[i].checked = false;
+            }
+          }
+        }
+
+        // localStorageに保存
+        localStorage.setItem("targetExtensionId", targetId);
+      };
+      if (currentTargetId && box.id == currentTargetId) {
+        box.checked = true;
+      }
+      div.appendChild(box);
+
+      var img = document.createElement("img");
+      img.widht = 16;
+      img.height = 16;
+      img.style.marginRight = "5px";
+      if (results[i].icons) {
+        // iconがある場合、常に先頭のものを使う(ただしサイズを16x16に設定する)
+        img.src = results[i].icons[0].url;
+      } else {
+        img.src = "chrome-extension://" + selfId + "/noicon.png";
+      }
+      div.appendChild(img);
+
+      var name = document.createElement("span");
+      name.innerHTML = results[i].name;
+      name.style.fontSize = "13px";
+      div.appendChild(name);
+
+      document.body.appendChild(div);
+    }
+  }
+});
+</script>
+<style>
+  body {
+    min-width: 400px;
+  }
+</style>
+</head>
+<body>
+</body>
+</html>
