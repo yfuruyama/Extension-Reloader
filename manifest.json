@@ -6,6 +6,10 @@
   "name": "Extension Reloader",
   "version": "1.0",
   "description": "Reload an unpackaged chrome extension by hitting the commond",
+  "browser_action": {
+    "default_icon": "icon_19.png",
+    "default_popup": "popup.html"
+  },
   "permissions": [
     "management"
   ],
