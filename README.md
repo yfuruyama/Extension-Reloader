@@ -12,7 +12,7 @@ How to use
 + https://raw.github.com/addsict/Extension-Reloader/master/ExtensionReloader.crx
 
 ###2. Set your HotKey and choose the extension you want to reload###
-+ Click the extension icon on your browser.
++ Click extension reloader icon on your browser.
 
 ###3. Fire your HotKey###
 + Hit your HotKey and the extension will be reloaded!
