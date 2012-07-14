@@ -58,13 +58,57 @@ chrome.management.getAll(function(results) {
     }
   }
 });
+
+function inputHotkey() {
+  var keyCode = localStorage.getItem("keyCode");
+  var ctrl = localStorage.getItem("ctrl");
+  var shift = localStorage.getItem("shift");
+  var alt = localStorage.getItem("alt");
+
+  var keyCodeElem = document.getElementById("keyCode");
+  var ctrlElem = document.getElementById("ctrl");
+  var shiftElem = document.getElementById("shift");
+  var altElem = document.getElementById("alt");
+
+  keyCodeElem.value = (keyCode != null) ? keyCode : 82;
+  ctrlElem.checked = (ctrl != null) ? ('true' === ctrl) : true;
+  shiftElem.checked = (shift != null) ? ('true' === shift) : false;
+  altElem.checked = (alt != null) ? ('true' === alt) : false;
+}
+
+function saveHotkey(e) {
+  var keyCodeElem = document.getElementById("keyCode");
+  var ctrlElem = document.getElementById("ctrl");
+  var shiftElem = document.getElementById("shift");
+  var altElem = document.getElementById("alt");
+
+  localStorage.setItem("keyCode", keyCodeElem.value);
+  localStorage.setItem("ctrl", ctrlElem.checked);
+  localStorage.setItem("shift", shiftElem.checked);
+  localStorage.setItem("alt", altElem.checked);
+}
+
 </script>
 <style>
   body {
     min-width: 400px;
+    background-color: #333;
+    color: #fff;
   }
+  #hotkey {
+      font-size: 13px;
+  } 
 </style>
 </head>
-<body>
+<body onload="inputHotkey()">
+<p> - Input the HotKey. </p>
+<div id="hotkey">
+    keyCode <input type="text" size="3" id="keyCode" /> (default 82: 'r')<br/>
+    ctrl <input type="checkbox" id="ctrl" />
+    shift <input type="checkbox" id="shift" />
+    alt <input type="checkbox" id="alt" /><br />
+<button onclick="saveHotkey()">save</button>
+</div>
+<p> - Select the extension which will be reloaded. </p>
 </body>
 </html>
